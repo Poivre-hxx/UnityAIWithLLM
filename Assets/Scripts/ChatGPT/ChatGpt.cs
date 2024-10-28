@@ -9,7 +9,7 @@ namespace OpenAi
 {
     public class ChatGpt
     {
-        public const string ApiKey = "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";
+        public const string ApiKey = "hk-2xyt4m1000045532a730e5a04365611c9e7b4fc5981df57a";
        
         static async Task GetAwaiter(AsyncOperation asyncOperation)
         {
@@ -20,7 +20,7 @@ namespace OpenAi
 
         static async Task<string> GetResponse(string body, List<(string, string)> headers = null)
         {
-            var url = "https://api.openai.com/v1/chat/completions";
+            var url = "https://api.openai-hk.com/v1/chat/completions";
 
             UnityWebRequest webRequest = new UnityWebRequest(url, "POST");
 
@@ -130,7 +130,7 @@ namespace OpenAi
                 chat = new Chat();
             chat.stream = true;
             string body = JsonUtility.ToJson(chat);
-            var url = "https://api.openai.com/v1/chat/completions";
+            var url = "https://api.openai-hk.com/v1/chat/completions";
             var headers = new List<(string name, string header)>
             {
                 ("Authorization", $"Bearer {ApiKey}"),
